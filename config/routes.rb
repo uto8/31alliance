@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :traditions
   root "pages#home"
+  resources :tradition_users
 end

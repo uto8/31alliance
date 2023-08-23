@@ -19,6 +19,8 @@ class TraditionsController < ApplicationController
 
   def show
     @tradition = Tradition.find(params[:id])
+    @tradition_user = TraditionUser.new
+    @tradition_users = TraditionUser.where(tradition_id: params[:id])
   end
 
   private
