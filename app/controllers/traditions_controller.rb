@@ -17,6 +17,10 @@ class TraditionsController < ApplicationController
     end
   end
 
+  def show
+    @tradition = Tradition.find(params[:id])
+  end
+
   private
   def tradition_params
     params.require(:tradition).permit(:title, :description, :area)
