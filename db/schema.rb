@@ -37,8 +37,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_062122) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.integer "gender"
-    t.boolean "married"
+    t.integer "gender", default: 2, null: false
+    t.boolean "married", default: false, null: false
     t.date "birthday"
     t.text "description"
     t.index ["email"], name: "index_users_on_email", unique: true

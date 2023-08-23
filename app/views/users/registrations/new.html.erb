@@ -2,7 +2,13 @@
   <div class="max-w-2xl px-4 py-8 mx-auto lg:py-16">
       <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">新規登録</h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
           <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
+              <div class="sm:col-span-2">
+                  <%= f.label :name,'名前', :class=>"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+                  <%= f.text_field :name, :class=>"w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", autofocus: true, autocomplete: "email" %>
+              </div>
               <div class="sm:col-span-2">
                   <%= f.label :email,'メールアドレス', :class=>"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
                   <%= f.email_field :email, :class=>"w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", autofocus: true, autocomplete: "email" %>
@@ -18,8 +24,45 @@
                   <%= f.label :password, 'パスワード(確認用)', :class=>"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
                   <%= f.password_field :password_confirmation, :class=>"w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", autofocus: true, autocomplete: "current-password" %>
               </div>
+              <div class="sm:col-span-2">
+                  <%= f.label :birthday,'生年月日', :class=>"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+                  <%= f.date_field :birthday, :class=>"w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", autofocus: true, autocomplete: "email" %>
+              </div>
+              <%# 性別 %>
+              <div class="p-2 w-full">
+                <div class="relative">
+                    <div class="flex">
+                        <div class="flex items-center mr-4">
+                            <%= f.radio_button :gender, :man, checked: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+                            <%= f.label "男性", class: "ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
+                        </div>
+                        <div class="flex items-center mr-4">
+                            <%= f.radio_button :gender, :woman, checked: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+                            <%= f.label "女性", class: "ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
+                        </div>
+                        <div class="flex items-center mr-4">
+                            <%= f.radio_button :gender, :other, checked: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" %>
+                            <%= f.label "その他", class: "ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
+                        </div>
+                    </div>
+                </div>
+              </div><br>
+              <div class="p-2 w-full">
+                <div class="relative">
+                    <div class="flex">
+                        <div class="flex items-center mr-4">
+                            <%= f.check_box :married, :class=>'mr-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600'%>
+                            <label for="married" class="font-medium text-gray-900">既婚者ですか？</label>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                  <%= f.label :description, "説明",:class=>"leading-7 text-sm text-gray-600" %>
+                  <%= f.text_area :description, :class=>"w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out",:placeholder=>'メッセージを書いてください' ,autofocus: true %>
+            </div>
           </div>
-          <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-4 mt-16">
               <%= f.submit "アカウント作成", :class=>"text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" %>
           </div>
       <% end %>
