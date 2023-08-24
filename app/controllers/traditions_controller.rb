@@ -25,6 +25,6 @@ class TraditionsController < ApplicationController
 
   private
   def tradition_params
-    params.require(:tradition).permit(:title, :description, :area)
+    params.require(:tradition).permit(:title, :description, :area, :image_url)
   end
 end
