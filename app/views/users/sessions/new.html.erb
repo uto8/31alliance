@@ -1,14 +1,14 @@
 <section class="bg-white dark:bg-gray-900">
   <div class="max-w-2xl px-4 py-8 mx-auto lg:py-16">
-      <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">管理者ログイン</h2>
+      <h2 class="mb-4 text-xl font-bold text-[#fff] dark:text-white">管理者ログイン</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
               <div class="sm:col-span-2">
-                  <%= f.label :email,'メールアドレス', :class=>"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+                  <%= f.label :email,'メールアドレス', :class=>"block mb-2 text-sm font-medium text-[#fff] dark:text-white" %>
                   <%= f.email_field :email, :class=>"w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", autofocus: true, autocomplete: "email" %>
               </div>
               <div class="sm:col-span-2">
-                  <%= f.label :password, 'パスワード', :class=>"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+                  <%= f.label :password, 'パスワード', :class=>"block mb-2 text-sm font-medium text-[#fff] dark:text-white" %>
                   <%= f.password_field :password, :class=>"w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", autofocus: true, autocomplete: "current-password" %>
               </div>
           </div>
