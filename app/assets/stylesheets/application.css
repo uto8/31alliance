@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+section,
+.backgorundImg{
+	background: url('backgroundImg_original2.png');
+ }
+
