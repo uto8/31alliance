@@ -1,55 +1,223 @@
 <style>
 *{
-
+    font-size:20px;
+    font-family: 'Rubik', sans-serif;
 }
 
 body {
 
 }
 
-.header { 
+.all-page-wrapper {
+    width: 1520px;
+    text-align: center;
+    margin:auto;
+    padding:0 40;
+}
+
+.page-header { 
     display:flex;
     justify-content:space-between;
+}
+
+.header-main {
+    margin-left: 10px;
+}
+
+.title {
+    font-family: 'Rubik', sans-serif;
+    font-weight:Bold;
+}
+
+.main-page-wrapper {
+    margin:auto;
+    text-align: center;
+}
+
+.main-page-content {
+    margin:auto;
+    display:block;
+    text-align: center;
+}
+
+.main-page-slideShow {
+    margin-bottom: 50px;
+}
+
+.main-page-map {
+    display: flex;
+    background-color: blanchedalmond;
+    justify-content: space-between;
+    height: 500px;
+}
+
+.map-image {
+    margin: 10px;
+    background-color: white;
+    margin-left: 100px;
+    border-radius: 5px;
+    border-color:cyan;
+    border-width: thick;
+
+}
+
+img{
+    height: 450px;
+    width: auto;
+    padding: 0 0;
+}
+
+.map-condition {
+    display: flex;
+    margin: 10px;
+    gap: 15px;
+    margin-right: 100px;
+    flex-direction: column;
+    width: 700px;
+}
+
+.search-container{
+  width: 600px;
+  padding-top: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+input#search-bar{
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #D0CFCE;
+  outline: none;
+  &:focus{
+    border: 1px solid #008ABF;
+    transition: 0.35s ease;
+    color: #008ABF;
+    &::-webkit-input-placeholder{
+      transition: opacity 0.45s ease; 
+      opacity: 0;
+     }
+    &::-moz-placeholder {
+      transition: opacity 0.45s ease; 
+      opacity: 0;
+     }
+    &:-ms-placeholder {
+     transition: opacity 0.45s ease; 
+     opacity: 0;
+     }    
+   }
+ }
+
+.search-icon{
+  position: relative;
+  float: right;
+  width: 75px;
+  height: 75px;
+  top: -62px;
+  right: -45px;
+}
+
+.search-division, .search-prefecture, .search-city {
+    background-color: green;
+    height: 150px;
+}
+
+.search-field {
+    height: 50px;
+    vertical-align: middle;
+    margin: 5px;
+    margin-left: 50px;
+    text-align: left;
+    background-color: red;
+}
+
+.search-field p{
+    font-size:30px;
+    width: 150px;
+    margin: 5px;
+    text-align: left;
+    background-color: blue;
+}
+
+.result-name {
+    height: 100px;
 
 }
 
 h1 {
     font-size:40px;
-
 }
 
-.right-up {
-    font-size:25px;
-    align-items:center;
-}
-
-.right-up  a{
-    font-size:16px;
-    padding:5px;
-    margin:10px;
-    Background-color:#CCFFFF;
-
-}
-
-.right-up a:hover {
-    font-size:16px;
-    padding:5px;
-    margin:10px;
-    color:gray;
+.footer-inner {
+    margin-left: 10px;
+    text-align: left;
+    padding: 0 0;
+    margin-top: 20px;
 }
 
 </style>
 
-<div class="header">
-<h1 class="h1">伝灯士</h1>
-<nav class="right-up">
-<a href="#">伝統リスト</a>
-<a href="#">伝統を追加する</a>
-</nav>
-</div>
+<div class="all-page-wrapper">
+    <div class="page-header">
+        <div class="header-main">
+            <h1 class="title">DenTorch.com</h1>
+        </div>
+    </div>
+    
+    <div class="main-page-wrapper">
+        <div class="main-page-content">
+            <div class="main-page-slideShow">
+                <%= render "shared/slideShow" %>
+            </div>
 
-<%= render "shared/slideShow" %>
+            <div class="main-page-map">
+                <div class="map-image">
+                    <%= link_to  image_tag( "Nagoya_Map.png" ), nagoya_path %>
+                </div>
+                <div class="map-condition">
+                    <div class="search-division">
+                        <div class="search-field">
+                            <p>地方</p>
+                        </div>
+                        <div class="result-name">
+                            <form class="search-container">
+                                <input type="text" id="search-bar" placeholder="東海地方">
+                                <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="search-prefecture">
+                        <div class="search-field">
+                            <p>都道府県</p>
+                        </div>
+                        <div class="result-name">
+                            <form class="search-container">
+                                <input type="text" id="search-bar" placeholder="愛知県">
+                                <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="search-city">
+                        <div class="search-field">
+                            <p>市町村</p>
+                        </div>
+                        <div class="result-name">
+                            <form class="search-container">
+                                <input type="text" id="search-bar" placeholder="名古屋市">
+                                <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<%= render "shared/map" %>
-
+    <div class="footer">
+        <div class="footer-inner">
+            <p>Copyright &copy; DenTorch.com</p>
+        </div>
+    </div>
 </div>
