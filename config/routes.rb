@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :traditions
   resources :users
   root "pages#home"
+  get "nagoya", to:"pages#nagoya"
   resources :tradition_users
 end
