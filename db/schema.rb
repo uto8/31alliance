@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_062122) do
 
   create_table "traditions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
+    t.text "image_url"
     t.text "description"
     t.string "area"
     t.datetime "created_at", null: false
@@ -37,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_062122) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.text "image_url"
     t.integer "gender", default: 2, null: false
     t.boolean "married", default: false, null: false
     t.date "birthday"

@@ -5,6 +5,10 @@
       <p class="leading-relaxed mb-5 text-gray-600">伝統を作成してください</p>
       <%= form_for(@tradition, url: {controller: 'traditions', action: 'index' }) do |f| %>
        <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
+           <div class="sm:col-span-2">
+                <%= f.label :image_url,'画像', :class=>"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+                <%= f.text_field :image_url, :class=>"w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", autofocus: true, autocomplete: "email" %>
+            </div>
             <div class="sm:col-span-2">
                 <%= f.label :title,'伝統名', :class=>"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
                 <%= f.text_field :title, :class=>"w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", autofocus: true, autocomplete: "email" %>
