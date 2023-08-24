@@ -52,8 +52,8 @@
           <% if joined(params[:id]) %>
           ないよ
             <% else %>
-            <%= form_with(model:@tradition_user, url:tradition_users_path, method: :post, local:true) do |f| %>
             <button class="mb-8 bg-green-600 hover:bg-green-500 text-white rounded px-4 py-2">夢を見る</button>
+            <%= form_with(model:@tradition_user, url:tradition_users_path, method: :post, local:true) do |f| %>
               <%= f.hidden_field :tradition_id, :value => params[:id] %>
               <%= f.hidden_field :user_id, :value => current_user.id %>
               <%= f.submit "参加する", :class=>"flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" %>
